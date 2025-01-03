@@ -8,12 +8,12 @@ from netflix_vfx_naming import Base, Episode, Sequence, Shot, Show
 class Scene(Base.Base):
     """Scene narrative object."""
 
-    def __init__(self) -> None:
+    def __init__(
+        self, name: str = "default_scene", desc: str = "default scene description"
+    ) -> None:
         """Initialize scene narrative object."""
-        super().__init__()
+        super().__init__(name=name, desc=desc)
         print("init Scene")
-        self.name = "default_scene"
-        self.desc = "default scene description"
         self.parent: typing.Optional[
             Union[Sequence.Sequence, Episode.Episode, Show.Show]
         ] = None
