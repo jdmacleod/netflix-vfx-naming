@@ -62,9 +62,10 @@ line-length = 88
 target-version = "py39"
 
 [tool.ruff.lint]
+# Enable ruff defaults, plus
 # Enable all `pydocstyle` rules, limiting to those that adhere to the
 # Google convention via `convention = "google"`, below.
-select = ["D"]
+select = ["E4", "E7", "E9", "F", "D"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
