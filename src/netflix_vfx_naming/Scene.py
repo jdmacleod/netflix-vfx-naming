@@ -1,8 +1,9 @@
 """Scene class."""
+
 import typing
 from typing import List, Union
 
-from netflix_vfx_naming import Base, Episode, Sequence, Shot, Show
+from netflix_vfx_naming import Base, Episode, Sequence, Shot, Show, logger
 
 
 class Scene(Base.Base):
@@ -13,7 +14,7 @@ class Scene(Base.Base):
     ) -> None:
         """Initialize scene narrative object."""
         super().__init__(name=name, desc=desc)
-        print("init Scene")
+        logger.debug("init Scene")
         self.parent: typing.Optional[
             Union[Sequence.Sequence, Episode.Episode, Show.Show]
         ] = None

@@ -1,8 +1,9 @@
 """Shot class."""
-import typing
-from typing import List, Union
 
-from netflix_vfx_naming import Base, Scene, Sequence
+import typing
+from typing import Union
+
+from netflix_vfx_naming import Base, Scene, Sequence, logger
 
 
 class Shot(Base.Base):
@@ -13,7 +14,7 @@ class Shot(Base.Base):
     ) -> None:
         """Initialize shot narrative object."""
         super().__init__(name=name, desc=desc)
-        print("init Shot.")
+        logger.debug("init Shot.")
         self.parent: typing.Optional[Union[Scene.Scene, Sequence.Sequence]] = None
 
     def get_fullname(self) -> str:

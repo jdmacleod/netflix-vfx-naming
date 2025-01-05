@@ -1,8 +1,9 @@
 """Episode class."""
+
 import typing
 from typing import List, Union
 
-from netflix_vfx_naming import Base, Scene, Season, Sequence, Show
+from netflix_vfx_naming import Base, Scene, Season, Sequence, Show, logger
 
 
 class Episode(Base.Base):
@@ -13,7 +14,7 @@ class Episode(Base.Base):
     ) -> None:
         """Initialize episode narrative object."""
         super().__init__(name=name, desc=desc)
-        print("init Episode")
+        logger.debug("init Episode")
         self.parent: typing.Optional[Union[Season.Season, Show.Show]] = None
         self.children: typing.Optional[
             Union[List[Scene.Scene], List[Sequence.Sequence]]
